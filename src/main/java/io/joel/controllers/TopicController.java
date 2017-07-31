@@ -33,4 +33,9 @@ public class TopicController {
         return "redirect:/";
     }
 
+    @RequestMapping(value = "/deleteTopic", method = RequestMethod.POST)
+    public String deleteTopic(@RequestParam("id") long id){
+        repo.delete(id);
+        return "redirect:/";
+    }
 }
